@@ -1,8 +1,7 @@
 import java.util.concurrent.atomic.AtomicInteger
 import java.util.concurrent.{Callable, Executors}
 
-object ExecutorServiceStudy extends App {
-  // スレッドを10個持つスレッドプールを作成する
+object ExecutorThreadPool extends App {
   val excecutors = Executors.newFixedThreadPool(10)
   val counter = new AtomicInteger(0)
 
@@ -17,6 +16,5 @@ object ExecutorServiceStudy extends App {
     })
   }
 
-  println("sum: " + future.foldLeft(0)((acc, f) => acc + f.get()))
   excecutors.shutdownNow()
 }

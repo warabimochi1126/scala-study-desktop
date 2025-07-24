@@ -1,7 +1,6 @@
 object Repl extends App {
-  println(List(1, 2, 3).foldLeft(1000)((acc, x) => {
-    println(s"acc: ${acc}")
-    println(s"x: ${x}")
-    3000
-  }))
+  val length = 10
+  val list = (for (i <- 1 to length) yield BigInt(i)).toList
+
+  println(list.splitAt(5))
 }
